@@ -5,17 +5,29 @@ using UnityEngine;
 public class LoadAssets : MonoBehaviour
 {
     public GameObject redObj;
-    // Start is called before the first frame update
+    [SerializeField] private GameObject blueObj; 
+
+   
     void Start()
     {
        
+        Vector3 redPosition = new Vector3(2f, 0f, 0f);
+        Quaternion redRotation = Quaternion.identity;
+        Instantiate(redObj, redPosition, redRotation);
 
+       
+        Vector3 bluePosition = new Vector3(-2f, 0f, 0f);
+        Quaternion blueRotation = Quaternion.identity;
+        Instantiate(blueObj, bluePosition, blueRotation);
 
-}
+       
+        Application.targetFrameRate = 60;
+    }
 
-    // Update is called once per frame
+  
     void Update()
     {
         
     }
 }
+
